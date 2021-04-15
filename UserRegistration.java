@@ -62,6 +62,25 @@ public class UserRegistration{
 		}
 	}
 
+	//UC4 Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number
+	public static void userMobileNumber() {
+
+		while(true)
+		{
+			String mobileNumber = input.nextLine();
+			boolean result = Pattern.matches("^[0-9]{2}[ ][6-9]{1}[0-9]{9}$", mobileNumber);
+			if (result == true)
+			{
+				System.out.println("Entered Mobile Number is Valid: " +mobileNumber);
+				break;
+			}
+			else
+			{
+				System.out.println("Invalid Mobile Number! Please Re-enter The Mobile Number:");
+			}
+		}
+	}
+
 	public static void main(String[] args){
 
 		System.out.print("Enter First Name = ");
@@ -70,5 +89,7 @@ public class UserRegistration{
 		userLastName();
 		System.out.print("Enter Email ID = ");
 		userEmail();
+		System.out.print("Enter Mobile Number = ");
+		userMobileNumber();
 	}
 }
