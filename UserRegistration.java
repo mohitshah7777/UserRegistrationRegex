@@ -81,6 +81,25 @@ public class UserRegistration{
 		}
 	}
 
+	//UC5 Rule1– minimum 8 Characters
+	public static void userPassword() {
+
+		while(true)
+		{
+			String password = input.nextLine();
+			boolean result = Pattern.matches("^(?=.*[a-z])(?=.*)[a-z]{8,}$", password);
+			if (result == true)
+			{
+				System.out.println("Entered Password is Valid");
+				break;
+			}
+			else
+			{
+				System.out.println("Invalid Password! Please Re-enter The Password: ");
+			}
+		}
+	}
+
 	public static void main(String[] args){
 
 		System.out.print("Enter First Name = ");
@@ -91,5 +110,7 @@ public class UserRegistration{
 		userEmail();
 		System.out.print("Enter Mobile Number = ");
 		userMobileNumber();
+		System.out.print("Enter Password = ");
+		userPassword();
 	}
 }
