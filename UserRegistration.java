@@ -43,6 +43,24 @@ public class UserRegistration{
 		}
 	}
 
+	//UC3 Email has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in) with precise @ and . positions
+	public static void userEmail() {
+
+		while(true)
+		{
+			String email = input.nextLine();
+			boolean result = Pattern.matches("^[A-Za-z0-9+-]+(\\.[A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", email);
+			if (result == true)
+			{
+				System.out.println("Entered Email is Valid: " +email);
+				break;
+			}
+			else
+			{
+				System.out.println("Invalid Email! Please Re-enter The Email:");
+			}
+		}
+	}
 
 	public static void main(String[] args){
 
@@ -50,5 +68,7 @@ public class UserRegistration{
 		userFirstName();
 		System.out.print("Enter Last Name = ");
 		userLastName();
+		System.out.print("Enter Email ID = ");
+		userEmail();
 	}
 }
