@@ -82,12 +82,13 @@ public class UserRegistration{
 	}
 
 	//UC5 Rule1– minimum 8 Characters
+	//UC6 Rule2- Atleast 1 Uppercase 
 	public static void userPassword() {
 
 		while(true)
 		{
 			String password = input.nextLine();
-			boolean result = Pattern.matches("^(?=.*[a-z])(?=.*)[a-z]{8,}$", password);
+			boolean result = Pattern.matches("^(?=.*[A-Za-z])(?=.*)[A-Za-z]{8,}$", password);
 			if (result == true)
 			{
 				System.out.println("Entered Password is Valid");
